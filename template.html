@@ -1,0 +1,317 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Validate an HTML page using W3C web standards</h2>
+      <h3>http://validator.w3.org</h3>
+    </hgroup>
+    <article>
+      <p>Validator</p>
+      <ul class="build">
+        <li>Detects errors in markup</li>
+        <li>Save you headaches</li>
+        <li>Detects document type automatically</li>
+      </ul>
+      
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Create internal and external anchor hyperlinks in a website</h2>
+    </hgroup>
+    <article>
+      <p>External</p>
+      <ul>
+        <li>Link to a site other than your own</li>
+        <li>Must include http:// and domain name</li>
+        <li>Can make the link open in a new window/tab</li>
+      </ul>
+      <pre class="prettyprint" data-lang="html">
+&lt;a href="http://www.facebook.com"&gt;Visit Facebook&lt;/a&gt;
+</pre>
+<p>Open in a new window</p>
+<pre class="prettyprint" data-lang="html">
+&lt;a target="_blank" href="http://www.facebook.com"&gt;Visit Facebook&lt;/a&gt;
+</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Create internal and external anchor hyperlinks in a website</h2>
+    </hgroup>
+    <article>
+      <p>Internal</p>
+      <ul>
+        <li>Links to page on your website</li>
+        <li>No need to include http:// or domain</li>
+      </ul>
+      <pre class="prettyprint" data-lang="html">
+&lt;a href="/contactus.html"&gt;Contact Us&lt;/a&gt;
+</pre>
+    </article>
+  </slide>
+
+ <slide>
+    <hgroup>
+      <h2>Javascript</h2>
+    </hgroup>
+    <article>
+      <p>What is it?</p>
+      <ul class="build">
+        <li>Language used on the web</li>
+        <li>It is not Java</li>
+        <li>Controls behavior of a page</li>
+        <li>Varies in complexity</li>
+        <li>Very expressive = can lead to confusion</li>
+        <li>Browser discrepancies</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Computer language</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Series of instructions to the computer</li>
+        <li>Like any language, must follow certain rules: spelling, order, puncuation, vocabulary</li>
+        <li>Speak French to person from France; Javascript to browsers</li>
+        <li></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>What can you do with Javascript?</h2>
+    </hgroup>
+    <article>
+      <p>Pretty much anything...</p>
+      <ul class="build">
+        <li>Validate forms</li>
+        <li>Respond to events</li>
+        <li>Animate elements on the page</li>
+        <li>Build rich user interfaces such as carousels, accordions, spinners</li>
+        <li>Control video and audio files</li>
+        <li>Load content on the fly</li>
+        <li>Games</li>
+        <li>Track user behavior</li>
+        <li>Build apps such as gmail, flickr, etc.</a>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>What is the role of Javascript frameworks?</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Frameworks provide a structure and shortcuts to Javascript</li>
+        <li>Smooth out differences between different browsers</li>
+        <li>jQuery is defacto standard on the web</li>
+        <li>Remember frameworks are still Javacript</li>
+        <li>Can accomplish tasks with less code</li>
+        <li>Provide common standard to coding</li>
+      </ul>
+    </article>
+  </slide>
+<slide>
+    <hgroup>
+      <h2>Example of how jQuery can simplify things</h2>
+    </hgroup>
+    <article>
+      <p>Pure Javascript to make all divs on the page change to red when clicked on</p> 
+      <pre class="prettyprint" data-lang="javascript">
+      var i, 
+        divs = document.getElementsByTagName('div');
+      for(i = 0; i < divs.length; i+=1) {
+        divs[i].onclick = function() {
+          this.style.backgroundColor = 'red';
+        }
+      }
+</pre>
+      <p>jQuery to do the same things</p> 
+      <pre class="prettyprint" data-lang="javascript">
+      $('div').click(function() {
+        $(this).css('background-color', 'red');
+      });
+</pre>
+    <p>7 lines of code vs. 3 lines of code</p>
+    </article>
+  </slide>
+
+  
+  <slide>
+    <hgroup>
+      <h2>How do you apply Javascript to a page?</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Can embed in the page</li>
+        <li>Can go anywhere, but try to place either in head or at bottom</li>
+        <li>Use script tags</li>
+      </ul>
+      <pre class="prettyprint" data-lang="javascript">
+&lt;script type='text/javascript'&gt;
+  [My script goes here]
+&lt;/script&gt;
+</pre>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>How do validate a form?</h2>
+    </hgroup>
+    <article>
+      <p>Concepts covered</p>
+      <ul class="build">
+        <li>Event handling</li>
+        <li>DOM</li>
+        <li>Code structure</li>
+      </ul>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>Events</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Many different types: click, scroll, form submit</li>
+        <li>Can be triggered by the user or you can trigger your own</li>
+        <li>A good portion of Javascript coding is listening to and responding to events</li>
+        <li>With Javascript, you can control the flow of events. Beware: Can break the UI.</li>
+      </ul>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>DOM</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Structure of the page represented in code</li>
+        <li>Any part of the page can be accessed, modified, deleted in Javascript</li>
+        <li>You can also add objects to the page</li>
+      </ul>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>Code structure</h2>
+    </hgroup>
+    <article>
+      <p>Code must follow certain rules or it will fail</p>
+      <ul>
+        <li>Decisions (conditionals) - if/else</li>
+        <li>Repeat tasks (loops) - for/while</li>
+        <li>Reusable items (variables, functions, objects) - var, function(), {}
+      </ul>
+    </article>
+  </slide>
+
+   <slide>
+    <hgroup>
+      <h2>Form example</h2>
+    </hgroup>
+    <article>
+      <p>Here's our form:</p>
+      <pre class="prettyprint" data-lang="html">
+&lt;form id="loginForm" action="/login"&gt;
+  &lt;input type="text" name="username" placeholder="Username"&gt;
+  &lt;input type="password" name="password" placeholder="Password"&gt;
+&lt;button type="submit">submit&lt;/button&gt;
+&lt;/form&gt;
+&lt;div id="messages">&lt;/div&gt;
+</pre>
+     <p>Using the DOM and events, we can use Javascript to listen to when the form is submitted (event), and check the values in the form (DOM).</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Form example</h2>
+    </hgroup>
+    <article>
+      <p>Here's the Javascript:</p>
+      <pre class="prettyprint" data-lang="javascript">
+$(function() {
+    $('#myForm').on('submit', function() {
+        if ($('#user').val() === '') {
+            $('#messages').html('You must enter a username.');
+            $('#user').addClass('error');
+        
+        } else if ($('#password').val() === '') {
+            $('#messages').html('You must enter a password.');
+            $('#password').addClass('error');
+        } else {
+            $('#messages').html('Form is valid');
+        }
+        return false;
+    });
+});
+</pre>
+     <p>We listen for a submit event and then use an if statement to inspect the DOM and see if we have values in the form. If not, we display a message to the user.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Form example</h2>
+    </hgroup>
+    <article>
+      <a href="http://jsfiddle.net/stubenbaines/94BfP/">Example here</a>
+    </article>
+  </slide>
+ 
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
